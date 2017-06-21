@@ -129,6 +129,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BinarywayCoreFramework\BinarywayCoreFramework\BinarywayCoreFramework.csproj">
+      <Project>{2df7bb93-2add-4cb2-b45b-afbd2a5d3f7a}</Project>
+      <Name>BinarywayCoreFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

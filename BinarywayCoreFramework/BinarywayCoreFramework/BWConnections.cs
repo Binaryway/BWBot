@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BinarywayCoreFramework.EF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,12 @@ namespace BinarywayCoreFramework
         {
             return true;
         }
+
+        public string FetchDataFromDB() {
+            BWAnalyticsEntities bw = new BWAnalyticsEntities();
+            var dbData = bw.BWTests.SingleOrDefault();
+            return dbData.NAME;
+        }
+
     }
 }

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
+using BinarywayCoreFramework;
 
 namespace BWBot
 {
@@ -16,6 +17,9 @@ namespace BWBot
         /// </summary>
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
+            //BWConnections bw = new BWConnections();
+            //var s = bw.FetchDataFromDB();
+
             if (activity.Type == ActivityTypes.Message)
             {
                 await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
