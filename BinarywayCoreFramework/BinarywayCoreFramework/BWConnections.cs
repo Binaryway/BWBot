@@ -9,15 +9,13 @@ namespace BinarywayCoreFramework
 {
     public class BWConnections
     {
-        public bool TestConnection()
+        public void ConfigureDependency()
         {
-            return true;
+           
         }
 
         public string FetchDataFromDB() {
-            BWAnalyticsEntities bw = new BWAnalyticsEntities();
-            var dbData = bw.BWTests.SingleOrDefault();
-            return dbData.NAME;
+            return "";
         }
 
     }

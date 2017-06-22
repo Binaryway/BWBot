@@ -5,21 +5,21 @@ using System.Web.Http;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 using BinarywayCoreFramework;
+using BinarywayCoreFramework.Services;
 
 namespace BWBot
 {
     [BotAuthentication]
     public class MessagesController : ApiController
     {
+        BWCompany bw = new BWCompany();
         /// <summary>
         /// POST: api/Messages
         /// Receive a message from a user and reply to it
         /// </summary>
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
-            //BWConnections bw = new BWConnections();
-            //var s = bw.FetchDataFromDB();
-
+            //bw.GetCompanyName();
             if (activity.Type == ActivityTypes.Message)
             {
                 await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
